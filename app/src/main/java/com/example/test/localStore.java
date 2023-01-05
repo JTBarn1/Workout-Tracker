@@ -30,6 +30,7 @@ public class localStore {
         Gson gson = new Gson();
         Type type = new TypeToken<ArrayList<Workout>>() {}.getType();
         ArrayList<Workout> workouts = gson.fromJson(workoutString, type);
+        if(workouts == null) workouts = new ArrayList<>();
         return workouts;
     }
 }

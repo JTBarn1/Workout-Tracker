@@ -22,4 +22,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, workoutView.class);
         startActivity(i);
     }
+    public void MaxClick(View v){
+        Intent i = new Intent(this, oneRepMax.class);
+        startActivity(i);
+    }
 }

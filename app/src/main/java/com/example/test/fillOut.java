@@ -19,7 +19,6 @@ import java.util.Date;
 
 
 public class fillOut extends AppCompatActivity {
-    public static final String list_key = "list key";
     ArrayList<Workout> workouts = new ArrayList<>();
     LinearLayout LayoutList;
     EditText dateText;
@@ -32,7 +31,6 @@ public class fillOut extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_out);
         Intent i = getIntent();
-
         workouts = localStore.readList(getApplicationContext());
 
         name = i.getStringExtra("Workout");
