@@ -19,40 +19,47 @@ import java.util.Date;
 
 
 public class fillOut extends AppCompatActivity {
+    ArrayList<Exercise> exercises = new ArrayList<>();
     ArrayList<Workout> workouts = new ArrayList<>();
     LinearLayout LayoutList;
     EditText dateText;
-    String name, date;
+    String name, date, bodyGroup;
     Boolean isEdit;
-    Workout w;
-    int index;
+    Exercise e;
+    int indexExercise,indexWorkout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fill_out);
         Intent i = getIntent();
+
+        exercises = localStore.readExerciseList(getApplicationContext());
         workouts = localStore.readList(getApplicationContext());
 
-        name = i.getStringExtra("Workout");
+        name = i.getStringExtra("Exercise");
+        bodyGroup = i.getStringExtra("BodyPart");
         isEdit = i.getBooleanExtra("isEdit", false);
-        index = i.getIntExtra("Index", 0);
+        indexExercise = i.getIntExtra("IndexExercise", 0);
+        indexWorkout = i.getIntExtra("IndexWorkout", 0);
         LayoutList = findViewById(R.id.set_list);
 
-        if(isEdit) addFilledWorkout();
+        if(isEdit) AddFilledExercise();
 
         dateText = findViewById(R.id.workoutDate);
         setTitle(name);
     }
-    public void addFilledWorkout(){
-        w = workouts.get(index);
-        System.out.println(index);
+    public void AddFilledExercise(){
+        e = workouts.get(indexWorkout).getExerciseList().get(indexExercise);
+        bodyGroup = e.getBodyGroup();
+        name = e.getID();
+        System.out.println(indexExercise);
         View date = findViewById(R.id.workoutDate);
         EditText dateEdit = (EditText) date;
-        dateEdit.setText(w.getDate());
+        dateEdit.setText(e.getDate());
 
-        for(int k = 0; k<w.getSetReps().length; k++) addFilledSet(w, k);
+        for(int k = 0; k<e.getSetReps().length; k++) addFilledSet(e, k);
     }
-    public void addFilledSet(Workout w, int k){
+    public void addFilledSet(Exercise w, int k){
 
         final View newSet = getLayoutInflater().inflate(R.layout.set_add,null,false);
         EditText setWeight = (EditText) newSet.findViewById(R.id.set_weight);
@@ -121,18 +128,33 @@ public class fillOut extends AppCompatActivity {
 
 
         if(sets==0) Toast.makeText(this, "Add Sets First", Toast.LENGTH_SHORT).show();
+
         else if(!works){
             Toast.makeText(this, "Enter Details Correctly", Toast.LENGTH_SHORT).show();;
         }
 
-
         else{
-        w = new Workout(name, sets, setWeights, setReps, date);
-        if (isEdit) workouts.set(index, w);
-        else workouts.add(w);
-        ArrayList<Workout> sortedWorkouts = dataAnalyse.sortWorkouts(workouts);
-        localStore.writeList(sortedWorkouts, getApplicationContext());
-        Toast.makeText(this, "Workout Successfully Saved", Toast.LENGTH_SHORT).show();
+        e = new Exercise(name, sets, setWeights, setReps, date, bodyGroup);
+
+        int i = dataAnalyse.checkIfWorkoutExists(e, workouts);
+        if(i>=0){
+            if (isEdit) workouts.get(i).editExercise(e, indexExercise);
+            else workouts.get(i).addExercise(e);
+        }
+        else{
+            Workout w = new Workout(e);
+            workouts.add(w);
+        }
+
+
+        if (isEdit) exercises.set(indexExercise, e);
+        else exercises.add(e);
+
+        ArrayList<Exercise> sortedExercises = dataAnalyse.sortWorkouts(exercises);
+        localStore.writeExerciseList(sortedExercises, getApplicationContext());
+        localStore.writeList(workouts,getApplicationContext());
+        for(int k = 0; k<workouts.size(); k++) workouts.get(k).print();
+        Toast.makeText(this, "Exercise Successfully Saved", Toast.LENGTH_SHORT).show();
         }
     }
     public boolean dateValid(String d) {

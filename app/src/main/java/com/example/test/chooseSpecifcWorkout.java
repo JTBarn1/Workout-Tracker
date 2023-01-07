@@ -1,7 +1,6 @@
 package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,26 +12,29 @@ import android.widget.LinearLayout;
 public class chooseSpecifcWorkout extends AppCompatActivity {
     LinearLayout workoutList;
     int bodyPart;
+    String bodyGroup;
+
     private String[] chestWorkouts = {"Bench Press", "Incline Bench", "Decline Bench"};
-    private String[] chestImages = {"bench", "bench", "bench"};
+    private String[] chestImages = {"chest", "chest", "chest"};
     private String[] backWorkouts = {"Squat", "Deadlift", "Leg Press"};
     private String[] backImages = {"leg", "leg", "leg"};
     private String[] legWorkouts = {"Lat Pulldown", "Cable Row", "Bent over Row"};
-    private String[] legImages = {"lat", "lat", "lat"};
+    private String[] legImages = {"back", "back", "back"};
     private String[] armWorkouts = {"Dumbell Curl", "Preacher Curl", "Tricep Pushdown"};
-    private String[] armImages = {"bicep", "bicep", "bicep"};
+    private String[] armImages = {"arm", "arm", "arm"};
     @Override
 
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_specific_workout);
+        setContentView(R.layout.activity_specific_exercise);
         setTitle("Selection Page");
         Intent i = getIntent();
 
-
         bodyPart = i.getIntExtra("Body Part", 1);
+        bodyGroup= i.getStringExtra("Body Group");
+
         workoutList = findViewById(R.id.workout_select_list);
         switch (bodyPart) {
             case 1:
@@ -53,7 +55,7 @@ public class chooseSpecifcWorkout extends AppCompatActivity {
 
 public void drawWorkouts(String[] names, String[] images){
     for(int k = 0; k<names.length; k++){
-        final View newWorkout = getLayoutInflater().inflate(R.layout.workout_card,null,false);
+        final View newWorkout = getLayoutInflater().inflate(R.layout.exercise_card,null,false);
         Button b = newWorkout.findViewById(R.id.workout);
         String s = names[k];
         b.setText(s);
@@ -66,7 +68,8 @@ public void drawWorkouts(String[] names, String[] images){
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(chooseSpecifcWorkout.this, fillOut.class);
-                i.putExtra("Workout",  s);
+                i.putExtra("Exercise",  s);
+                i.putExtra("BodyPart", bodyGroup);
                 startActivity(i);
             }
         });

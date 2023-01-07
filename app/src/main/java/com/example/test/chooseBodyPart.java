@@ -18,21 +18,25 @@ public class chooseBodyPart extends AppCompatActivity {
     public void ChestButtonClick(View v) {
         Intent i = new Intent(this, chooseSpecifcWorkout.class);
         i.putExtra("Body Part", 1);
+        i.putExtra( "Body Group", "chest");
         startActivity(i);
     }
     public void BackButtonClick(View v){
         Intent i = new Intent(this, chooseSpecifcWorkout.class);
         i.putExtra("Body Part", 2);
+        i.putExtra( "Body Group", "back");
         startActivity(i);
     }
     public void LegButtonClick(View v){
         Intent i = new Intent(this, chooseSpecifcWorkout.class);
         i.putExtra("Body Part", 3);
+        i.putExtra( "Body Group", "leg");
         startActivity(i);
     }
     public void ArmButtonClick(View v){
         Intent i = new Intent(this, chooseSpecifcWorkout.class);
         i.putExtra("Body Part", 4);
+        i.putExtra( "Body Group", "arm");
         startActivity(i);
     }
 }

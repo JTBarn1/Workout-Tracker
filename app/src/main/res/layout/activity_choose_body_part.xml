@@ -37,7 +37,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/bench"/>
+                    android:src="@drawable/chest"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/lat"/>
+                    android:src="@drawable/back"/>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -100,7 +100,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/bicep"/>
+                    android:src="@drawable/arm"/>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>

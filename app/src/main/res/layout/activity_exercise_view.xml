@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".workoutView">
-    <LinearLayout
-        android:id="@+id/complete_workout_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"/>
+    tools:context=".ExerciseView">
+<LinearLayout
+    android:id="@+id/complete_set_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
