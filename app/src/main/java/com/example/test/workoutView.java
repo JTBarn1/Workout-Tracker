@@ -11,6 +11,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * The workoutView class is an Android activity that displays a list of previous workouts in the form of
+ * CardViews. Each CardView displays information such as the body part worked on, the date, the number of
+ * exercises performed, and the total weight lifted. The user can also view the exercises performed in each
+ * workout by clicking on an expand button in the CardView.
+ */
+
 public class workoutView extends AppCompatActivity {
 
     //Initialising the LinearLayout and the ArrayList
@@ -33,7 +40,7 @@ public class workoutView extends AppCompatActivity {
         for(int k = 0; k< workouts.size(); k++) displayCards(workouts.get(k),k);
     }
 
-    // Creates Cardview workout_display_card with a Workout class W and an integer I
+    // Creates Cardview workout_display_card using a Workout class W and an integer I as parameters
     public void displayCards(Workout w, int i){
         final View newWorkout = getLayoutInflater().inflate(R.layout.workout_display_card,null,false);
 
@@ -59,9 +66,14 @@ public class workoutView extends AppCompatActivity {
 
         //Sets number of exercises
         TextView exercises = (TextView) newWorkout.findViewById(R.id.workout_text_exercises);
-        exercises.setText(String.valueOf(w.getNumOfExercises()) + " exercise logged");
+            //checks number of exercises, if >1, changes String to a plural form
+            String singularOrPlural;
+            if(w.getNumOfExercises() == 1) singularOrPlural = "exercise";
+            else singularOrPlural = "exercises";
+        exercises.setText(String.valueOf(w.getNumOfExercises()) + " " + singularOrPlural +" logged");
 
         //Sets Total weight lifted
+        //I don't check for singular or plural, because it is extremely uncommon for someone to lift 1 pound in a workout.
         TextView weightLifted = (TextView) newWorkout.findViewById((R.id.workout_text_weightLifted));
         weightLifted.setText(String.valueOf(w.getTotalWeightLifted())+ " pounds lifted");
 
@@ -78,7 +90,8 @@ public class workoutView extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //Adding the now complete CardCiew to the LinearLayout
+
+        //Adding the now complete CardView to the LinearLayout
         LayoutList.addView(newWorkout);
     }
 

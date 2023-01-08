@@ -14,7 +14,7 @@ public class oneRepMax extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_rep_max);
-        exercises = localStore.readExerciseList(getApplicationContext());
+        //exercises = localStore.readExerciseList(getApplicationContext());
         text = findViewById(R.id.maxText);
         int max = findMax("Bench Press",3);
         text.setText(String.valueOf(max));
