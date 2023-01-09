@@ -2,9 +2,10 @@ package com.example.test;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 
 /**
- * The dataAnalyse class contains static utility methods for analyzing data.
+ * The dataAnalyse class contains static utility methods for analyzing and modifying data.
  */
 
 public class dataAnalyse {
@@ -35,5 +36,84 @@ public class dataAnalyse {
         //My goal is to eventually make this binary search
         for(int k = 0; k<workouts.size(); k++) if(e.getDate().equals(workouts.get(k).getDate())) return k;
         return -1;
+    }
+
+    //GroupExercises method. Create a hashmap that contains the most recent three exercises for each exercise.
+    public static HashMap<String, ArrayList<Exercise>> GroupExercises(ArrayList<Workout> workouts){
+
+        //Declaring the hashmap
+        HashMap<String, ArrayList<Exercise>> hashExercises = new HashMap<>();
+
+        //Looping through the ArrayList of workouts
+        for(int i = workouts.size()-1; i>0; i--){
+            Workout w = workouts.get(i);
+
+            //Looping through each workout's Exercises
+            for( int j = 0; j < w.getExerciseList().size(); j++){
+
+                //Setting the hashmap key
+                String id = w.getExerciseList().get(j).getID();
+
+                //Getting the Arraylist from the hashmap using the key
+                ArrayList<Exercise> hashedList = hashExercises.get(id);
+
+                //If no exercises of this type have been put in the hashmap yet, makes a new ArrayList and enters it
+                if(hashedList == null){
+
+                    //Making the list
+                    ArrayList<Exercise> e = new ArrayList<>();
+                    e.add(w.getExerciseList().get(j));
+
+                    //Putting it into the hashmap
+                    hashExercises.put(id,e);
+                }
+                //Otherwise, adds exercise to the list and puts it in the hashmap
+                else {
+
+                    //only lets the first tree exerises in hashmap
+                    if(hashedList.size() <=3) {
+                        hashedList.add(w.getExerciseList().get(j));
+
+                        //Putting it into the hashmap
+                        hashExercises.put(id, hashedList);
+                    }
+                }
+            }
+        }
+
+        //Returning the hashmap
+        return hashExercises;
+    }
+
+    //findMax method. Finds Highest theoretiacl max from all completed sets, and returns it.
+    public static int findMax(ArrayList<Exercise> exercises) {
+        //setting the one rep max at 0
+        double max = 0;
+
+        //loops through all exercises
+        for(int i = 0; i< exercises.size(); i++){
+
+            //finds theoretical max from every set completed on days workout, and finds the highest number
+            for(int j = 0; j< exercises.get(i).getSetReps().length; j++){
+
+                //Creating the max value
+                //Double is used because we need decimal points
+                double setMax = 0;
+
+                // Calls the Bryzki formula with the Jth weight and rep from the Ith Exercise
+                setMax = BrzyckiFormula(((double)exercises.get(i).getSetWeights()[j]),((double)exercises.get(i).getSetReps()[j]));
+                if(setMax > max) max = setMax;
+            }
+        }
+
+        //Returning the max and casting to integer
+        return (int) max;
+    }
+
+    //BrzyckiFormula method. Takes the a weight and rep value and Returns a one rep max based off the Brzycki formula
+    public static double BrzyckiFormula(double weight, double reps){
+
+        //Returning the calculated max
+        return (weight * (36/(37-reps)));
     }
 }

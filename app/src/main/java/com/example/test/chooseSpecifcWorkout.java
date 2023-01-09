@@ -19,14 +19,14 @@ public class chooseSpecifcWorkout extends AppCompatActivity {
     //These Arrays of Strings are used to determine what to show for each body part selected
     //The first string is used to sex the Textview with the name of the workout
     //The second array is used to find the image in Drawable associated with the exercise
-    private String[] chestWorkouts = {"Bench Press", "Incline Bench", "Decline Bench"};
-    private String[] chestImages = {"chest", "chest", "chest"};
-    private String[] backWorkouts = {"Lat Pulldown", "Cable Row", "Bent over Row"};
-    private String[] backImages = {"back", "back", "back"};
-    private String[] legWorkouts = {"Squat", "Deadlift", "Leg Press"};
-    private String[] legImages = {"leg", "leg", "leg"};
-    private String[] armWorkouts = {"Dumbell Curl", "Preacher Curl", "Tricep Pushdown"};
-    private String[] armImages = {"arm", "arm", "arm"};
+    private String[] chestWorkouts = {"Bench Press", "Incline Bench", "Decline Bench", "Dumbell bench", "Dumbell Incline", "Dumbell Decline","Chest Fly"};
+    private String[] chestImages = {"chest", "incline", "decline", "dumbellbench", "dumbellincline", "dumbelldecline", "fly"};
+    private String[] backWorkouts = {"Lat Pulldown", "Seated Row", "Bent over Row", "Face Pull"};
+    private String[] backImages = {"back", "seatedrow", "bentover", "facepull"};
+    private String[] legWorkouts = {"Squat", "Deadlift", "Leg Press", "Bulgarian S.S","Calf Raise", "Leg Extension", "Leg Curl"};
+    private String[] legImages = {"leg", "deadlift", "legpress","bulgarian", "calfraise", "legextension","legcurl"};
+    private String[] armWorkouts = {"Dumbell Curl", "Preacher Curl", "Tricep Pushdown", "Skull Crushers"};
+    private String[] armImages = {"arm", "preacher", "tricep", "skull"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

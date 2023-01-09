@@ -53,7 +53,7 @@
                     android:text="Back"
                     android:textSize="20dp"
                     android:textAllCaps="false"
-                    android:onClick="LegButtonClick"
+                    android:onClick="BackButtonClick"
                     android:background="@android:color/transparent"/>
                 <ImageView
                     android:layout_width="100dp"
@@ -74,7 +74,7 @@
                     android:text="Legs"
                     android:textSize="20dp"
                     android:textAllCaps="false"
-                    android:onClick="BackButtonClick"
+                    android:onClick="LegButtonClick"
                     android:background="@android:color/transparent"/>
                 <ImageView
                     android:layout_width="100dp"
