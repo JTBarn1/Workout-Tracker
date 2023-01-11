@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/background"
     android:layout_height="match_parent">
 
     <TextView
@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Manually calculate the one rep max below"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +21,11 @@
         android:id="@+id/Weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Weight Lifted"
-        android:layout_marginTop="60dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
+        android:hint="Weight Lifted"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,19 +33,25 @@
         android:id="@+id/reps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Reps Completed"
-        android:layout_marginTop="120dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="140dp"
+        android:hint="Reps Completed"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="20dp"
         android:onClick="calculateEnteredMax"
         android:text="calculate"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,19 +59,25 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:text="Result"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/reps"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/button3" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="220dp"
+        android:fontFamily="sans-serif-medium"
         android:text="Or view Calculated maxes based on previous workouts"
         android:textAlignment="center"
+        android:textColor="@color/text"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +87,8 @@
         android:id="@+id/view"
         android:layout_width="wrap_content"
         android:layout_height="5dp"
-        android:layout_marginTop="230dp"
-        android:background="@color/black"
+        android:layout_marginTop="250dp"
+        android:background="@color/text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,6 +98,7 @@
         android:overScrollMode="never"
         android:scrollbars="vertical"
         app:layout_constraintTop_toBottomOf="@+id/view">
+
         <LinearLayout
             android:id="@+id/max_list"
             android:layout_width="match_parent"

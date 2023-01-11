@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".fillOut">
 
     <TextView
@@ -12,69 +13,88 @@
         android:layout_height="wrap_content"
         android:text="Enter Date of Workout"
         android:layout_marginVertical="20dp"
-        android:textSize="20dp"
+        android:textSize="30sp"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/workoutDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
+        android:fontFamily="sans-serif-medium"
         android:hint="MM/DD/YY"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="10dp"
+
         android:inputType="date"
+        android:textColor="@color/text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="10dp"
-        android:text="Today"
-        android:textAllCaps="false"
         android:onClick="todayCLick"
+        android:text="Today"
+        android:textColor="@color/text"
+        android:backgroundTint="@color/button"
+        android:fontFamily="sans-serif-medium"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toEndOf="@+id/workoutDate"
+        app:layout_constraintTop_toTopOf="@+id/workoutDate" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
         android:orientation="vertical"
-        android:layout_marginTop="120dp"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        tools:layout_editor_absoluteX="4dp">
 
         <Button
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="25sp"
+            android:textColor="@color/text"
+            android:backgroundTint="@color/button"
+            android:fontFamily="sans-serif-medium"
             android:layout_gravity="center"
             android:onClick="addSet"
             android:text="Add a set"
             android:textAllCaps="false" />
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/set_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+        </ScrollView>
         <Button
             android:id="@+id/set_save"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="25sp"
+            android:textColor="@color/text"
+            android:backgroundTint="@color/button"
+            android:fontFamily="sans-serif-medium"
             android:onClick="save"
             android:text="Save"
             android:textAllCaps="false" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="220dp">
-        <LinearLayout
-            android:id="@+id/set_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

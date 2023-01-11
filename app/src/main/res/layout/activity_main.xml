@@ -4,58 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".Main">
-
-    <Button
-        android:id="@+id/workoutStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="workoutButtonClick"
-        android:text="Enter An Exercise"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/workoutView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="viewButtonClick"
-        android:text="See Previous Workouts"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutStart" />
-
-    <ImageView
-        android:id="@+id/openImage"
-        android:layout_width="323dp"
-        android:layout_height="186dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_25" />
 
     <TextView
         android:id="@+id/openText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="FItness Tracker"
+        android:layout_marginTop="110dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Fitness Tracker"
+        android:textColor="@color/text"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openImage" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/workoutMax"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="One Rep Max Calculator"
-        android:layout_marginTop="40dp"
-        android:onClick="MaxClick"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutView" />
+        app:layout_constraintTop_toBottomOf="@+id/openText">
+
+        <Button
+            android:id="@+id/workoutStart"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/button"
+            android:onClick="workoutButtonClick"
+            android:text="Enter An Exercise"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/text"/>
+
+        <Button
+            android:id="@+id/workoutView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/text"
+            android:textAllCaps="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/button"
+            android:onClick="viewButtonClick"
+            android:text="See Previous Workouts"
+            />
+
+        <Button
+            android:id="@+id/workoutMax"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/button"
+            android:onClick="MaxClick"
+            android:text="One Rep Max Calculator"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/text"/>
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

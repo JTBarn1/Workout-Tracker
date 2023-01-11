@@ -37,7 +37,7 @@ public class workoutView extends AppCompatActivity {
         workouts = localStore.readList(getApplicationContext());
 
         //Dynamically calls the method displayCards based on number of items in the ArrayList
-        for(int k = 0; k< workouts.size(); k++) displayCards(workouts.get(k),k);
+        for(int k = workouts.size()-1; k >= 0; k--) displayCards(workouts.get(k),k);
     }
 
     // Creates Cardview workout_display_card using a Workout class W and an integer I as parameters

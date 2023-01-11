@@ -87,7 +87,7 @@ public class oneRepMax extends AppCompatActivity {
 
         //Sets the result textView to the calculated one rep max of the entered values
         //Max is casted to an integer because it looks cleaner without decimal points
-        else result.setText(String.valueOf((int)dataAnalyse.BrzyckiFormula(weight,reps)));
+        else result.setText(String.valueOf((int)dataAnalyse.BrzyckiFormula(weight,reps)) + " Pounds");
     }
 
     //checkValid method. Checks if String entered can be safely parsed into a Double.

@@ -12,23 +12,30 @@
         android:layout_height="wrap_content"
         android:text="Bench Press"
         android:layout_marginLeft="5dp"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:layout_gravity="left"/>
     <TextView
         android:id="@+id/date"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:text="12/24/22"/>
     <TextView
         android:id="@+id/sets"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:text="5 sets"/>
     <ImageView
         android:id="@+id/set_remove"
         android:layout_width="25dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
         android:layout_gravity="center_vertical"
         android:src="@drawable/x"/>
     <ImageView

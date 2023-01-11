@@ -8,11 +8,17 @@
         android:id="@+id/max_body_part"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:text="Bench Press"/>
     <TextView
         android:id="@+id/max_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20sp"
         android:layout_marginLeft="10dp"
         android:text="500 LBS"/>
 </LinearLayout>

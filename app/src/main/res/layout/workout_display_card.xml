@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:backgroundTint="@color/grey"
+    android:backgroundTint="@color/button"
     app:cardUseCompatPadding="true"
     app:cardElevation="1dp"
     app:cardCornerRadius="10dp">
@@ -21,7 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:layout_marginTop="5dp"
         android:text="Chest Day"
@@ -31,7 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginTop="30dp"
         android:text="12/22/22"
         />
@@ -40,7 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginTop="50dp"
         android:text="5 Exercises"
         />
@@ -49,7 +52,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginTop="70dp"
         android:text="5500 LB Lifted"
         />
@@ -58,6 +62,7 @@
         android:layout_gravity="right"
         android:layout_width="60dp"
         android:layout_height="60dp"
+
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:src="@drawable/plus"/>

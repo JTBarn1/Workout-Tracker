@@ -4,114 +4,150 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".chooseBodyPart">
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Choose Body Part"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
         android:overScrollMode="never"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/black"
+                android:layout_height="115dp"
+
+                android:backgroundTint="@color/background"
+                app:cardCornerRadius="5dp"
+                app:contentPadding="-5dp"
+                app:cardUseCompatPadding="true"
                 app:cardElevation="5dp">
+
                 <Button
                     android:id="@+id/chest_workout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Chest"
-                    android:textSize="20dp"
-                    android:textAllCaps="false"
+                    android:backgroundTint="@color/button"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/text"
                     android:onClick="ChestButtonClick"
-                    android:background="@android:color/transparent"/>
+                    android:text="Chest"
+                    android:textAllCaps="false"
+                    android:textSize="25dp" />
+
                 <ImageView
                     android:layout_width="100dp"
+                    android:translationZ="90dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/chest"/>
+                    android:src="@drawable/chest" />
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/black"
-                app:cardElevation="5dp">
+                android:layout_height="115dp"
+                android:backgroundTint="@color/background"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                app:contentPadding="-5dp"
+                app:cardUseCompatPadding="true">
+
+
                 <Button
                     android:id="@+id/back_workout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Back"
-                    android:textSize="20dp"
-                    android:textAllCaps="false"
                     android:onClick="BackButtonClick"
-                    android:background="@android:color/transparent"/>
+                    android:backgroundTint="@color/button"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/text"
+                    android:text="Back"
+                    android:textAllCaps="false"
+                    android:textSize="25dp" />
+
                 <ImageView
                     android:layout_width="100dp"
+                    android:translationZ="90dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/back"/>
+                    android:src="@drawable/back" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/black"
+                android:layout_height="115dp"
+                android:backgroundTint="@color/background"
+                app:cardCornerRadius="5dp"
+                app:contentPadding="-5dp"
+                app:cardUseCompatPadding="true"
                 app:cardElevation="5dp">
+
                 <Button
                     android:id="@+id/leg_workout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Legs"
-                    android:textSize="20dp"
-                    android:textAllCaps="false"
                     android:onClick="LegButtonClick"
-                    android:background="@android:color/transparent"/>
+                    android:backgroundTint="@color/button"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/text"
+                    android:text="Legs"
+                    android:textAllCaps="false"
+                    android:textSize="25dp" />
+
                 <ImageView
                     android:layout_width="100dp"
+                    android:translationZ="90dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/leg"/>
+                    android:src="@drawable/leg" />
             </androidx.cardview.widget.CardView>
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/black"
+                android:layout_height="115dp"
+
+                android:backgroundTint="@color/background"
+                app:cardCornerRadius="5dp"
+                app:contentPadding="-5dp"
+                app:cardUseCompatPadding="true"
                 app:cardElevation="5dp">
+
                 <Button
                     android:id="@+id/arm_workout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Arms"
-                    android:textSize="20dp"
-                    android:textAllCaps="false"
                     android:onClick="ArmButtonClick"
-                    android:background="@android:color/transparent"/>
+                    android:backgroundTint="@color/button"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/text"
+                    android:text="Arms"
+                    android:textAllCaps="false"
+                    android:textSize="25dp" />
+
                 <ImageView
                     android:layout_width="100dp"
+                    android:translationZ="90dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/arm"/>
+                    android:src="@drawable/arm" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Choose Body Part"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,7 +61,12 @@ public class ExerciseView extends AppCompatActivity {
 
         //Sets the number of sets completed
         TextView Sets = (TextView) newWorkout.findViewById(R.id.sets);
-        Sets.setText(String.valueOf(e.getSets()) + " sets");
+
+        //checks number of Sets, if >1, changes String to a plural form
+        String singularOrPlural;
+        if(e.getSets() == 1) singularOrPlural = " exercise";
+        else singularOrPlural = " exercises";
+        Sets.setText(String.valueOf(e.getSets()) + singularOrPlural);
 
         ImageView setClose = (ImageView) newWorkout.findViewById(R.id.set_remove);
 

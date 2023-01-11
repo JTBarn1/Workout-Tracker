@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".chooseSpecifcWorkout">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
         android:overScrollMode="never"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <LinearLayout
             android:id="@+id/workout_select_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp"
+            android:orientation="vertical"></LinearLayout>
     </ScrollView>
     <TextView
         android:id="@+id/textView"
@@ -25,7 +28,9 @@
         android:layout_height="50dp"
         android:text="Choose Exercise"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
