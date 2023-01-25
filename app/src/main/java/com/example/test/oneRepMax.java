@@ -64,9 +64,9 @@ public class oneRepMax extends AppCompatActivity {
         //Calculating the one rep max, using the ArrayList of Exercises
         int oneRepMax = dataAnalyse.findMax(exercises);
 
-        //Setting the one rep max, after calculating it
+        //Setting the one rep max, after calculating it, to the nearest 5
         TextView max = (TextView) newMax.findViewById(R.id.max_max);
-        max.setText(String.valueOf(oneRepMax) + " Pounds");
+        max.setText(String.valueOf((int)(Math.round(oneRepMax/5.0)*5.0)) + " Pounds");
 
         //Adding to LayoutList
         LayoutList.addView(newMax);

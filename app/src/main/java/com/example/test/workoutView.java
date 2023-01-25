@@ -64,13 +64,13 @@ public class workoutView extends AppCompatActivity {
         TextView Date = (TextView) newWorkout.findViewById(R.id.workout_text_date);
         Date.setText(w.getDate());
 
-        //Sets number of exercises
-        TextView exercises = (TextView) newWorkout.findViewById(R.id.workout_text_exercises);
-            //checks number of exercises, if >1, changes String to a plural form
+        //Sets number of Sets done
+        TextView Sets = (TextView) newWorkout.findViewById(R.id.workout_text_sets);
+            //checks number of sets, if >1, changes String to a plural form
             String singularOrPlural;
-            if(w.getNumOfExercises() == 1) singularOrPlural = "exercise";
-            else singularOrPlural = "exercises";
-        exercises.setText(String.valueOf(w.getNumOfExercises()) + " " + singularOrPlural +" logged");
+            if(w.getSetsDone() == 1) singularOrPlural = "set";
+            else singularOrPlural = "sets";
+        Sets.setText(String.valueOf(w.getSetsDone()) + " " + singularOrPlural +" logged");
 
         //Sets Total weight lifted
         //I don't check for singular or plural, because it is extremely uncommon for someone to lift 1 pound in a workout.

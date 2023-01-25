@@ -9,7 +9,20 @@ package com.example.test;
 public class Exercise {
     //Declcaring the fields for the class
     private String id, date, bodyGroup;
-    private int sets, day, month, year;
+    private int sets;
+    private int day;
+    private int month;
+    private int year;
+
+
+
+
+
+
+
+
+
+    private int commonExercise  = -1;
     private int[] setWeights, setReps;
 
 
@@ -22,7 +35,7 @@ public class Exercise {
         this.setReps = reps.clone();
         this.date = date;
         this.bodyGroup= group;
-
+        this.commonExercise = dataAnalyse.checkCommonExercises(this);
         //Splits the date string into 3 parts
         String[] yearmonthday = date.split("/");
 
@@ -52,4 +65,6 @@ public class Exercise {
     public int[] getSetReps(){
         return setReps;
     }
+    public int getCommonExercise() {return commonExercise;}
+
 }
